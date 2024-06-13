@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "checkJs": true,
+
+    /* Bundled projects */
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "plugins": [{ "name": "next" }],
+    "incremental": true,
+
+    //"forceConsistentCasingInFileNames": true,
+
+    /* Path Aliases */
+    "baseUrl": "src",
+    "paths": {
+      "~/*": ["./*"],
+      "@lib/*": ["lib/*"],
+      "@data/*": ["data/*"],
+      "@hook/*": ["hooks/*"],
+      "@utils": ["utils/index.ts"],
+      "@utils/*": ["utils/*"],
+      "@context/*": ["contexts/*"],
+      "@reducer/*": ["reducers/*"],
+      "@component/*": ["components/*"],
+      "@sections/*": ["page-sections/*"],
+      "@models/*": ["models/*"]
+    }
+  },
+  "include": [
+    ".eslintrc.cjs",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.js",
+    ".next/types/**/*.ts",
+    "./src/components/swiper/swiper.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "./src/components/icon/Icon.tsx",
+    "eslint.config.js",
+     "./src/components/buttons/Button.tsx"
+  ]
+}
