@@ -4,7 +4,7 @@ export const aboutLinks = [
   "Hoá chất",
   "Vật tư tiêu hao",
   "Công cụ - dụng cụ",
-  "Phụ tùng thay thế",
+  "Phụ tùng thay thế"
 ];
 
 export const customerCareLinks = [
@@ -12,16 +12,13 @@ export const customerCareLinks = [
   "Hình thức thanh toán",
   "Chính sách giao hàng",
   "Chính sách bảo hành đổi trả",
-  "Chính sách bảo mật thông tin",
+  "Chính sách bảo mật thông tin"
 ];
 
 export const iconList = [
   { iconName: "facebook", url: "https://www.facebook.com/UILibOfficial" },
   { iconName: "twitter", url: "/" },
-  {
-    iconName: "youtube",
-    url: "https://www.youtube.com/channel/UCsIyD-TSO1wQFz-n2Y4i3Rg",
-  },
+  { iconName: "youtube", url: "https://www.youtube.com/channel/UCsIyD-TSO1wQFz-n2Y4i3Rg" },
   { iconName: "google", url: "/" },
-  { iconName: "instagram", url: "/" },
+  { iconName: "instagram", url: "/" }
 ];
