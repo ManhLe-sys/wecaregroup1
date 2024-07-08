@@ -6,6 +6,7 @@ import { X } from "lucide-react";
 import { Link } from "~/components/link";
 import { Button } from "~/components/shadcn/button";
 
+//button closse in detail
 export const CloseLeafButton = ({ leafSlug }: { leafSlug: string }) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();

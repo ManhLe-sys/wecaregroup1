@@ -18,9 +18,6 @@ import {
 } from "@tanstack/react-table";
 
 import type { Tables } from "~/lib/supabase/types";
-import { Image } from "~/components/image";
-import TextField from "~/components/text-field";
-import { Button } from "~/components/ui/button";
 import { Skeleton } from "~/components/ui/skeleton";
 import {
   Table,
@@ -31,18 +28,16 @@ import {
   TableRow,
 } from "~/components/ui/table";
 import { cn } from "~/utils";
-import { vndFormatter } from "~/utils/vndFormatter";
+
+// import { vndFormatter } from "~/utils/vndFormatter";
 
 export const PriceTable = ({
-  material,
   data,
-  customerProducts = [],
   skeleton,
-  img,
 }: {
   material: string;
-  data: Tables<"products">[];
-  customerProducts: Tables<"customers_matview">["products"];
+  data: Tables<"don_hang">[];
+  customerProducts: Tables<"don_hang">;
   skeleton?: boolean;
   img: string;
 }) => {
@@ -58,55 +53,44 @@ export const PriceTable = ({
   const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 10 });
 
   const onRowClick = (
-    row: Row<Tables<"products">>,
-    table: TableDef<Tables<"products">>,
+    row: Row<Tables<"don_hang">>,
+    table: TableDef<Tables<"don_hang">>,
   ) => {
     if (!row.getIsExpanded()) {
       table.resetExpanded();
     }
     row.getToggleExpandedHandler()();
   };
-  const columns: ColumnDef<Tables<"products">>[] = [
+  const columns: ColumnDef<Tables<"don_hang">>[] = [
     {
-      header: "Thương hiệu",
-      accessorKey: "thuong_hieu",
+      header: "Mã đơn hàng",
+      accessorKey: "ma_don_hang",
       cell: ({ getValue }) => getValue() || "Đang c.nhật",
     },
     {
-      header: "Quy cách",
-      accessorKey: "quy_cach",
+      header: "Đơn hàng",
+      accessorKey: "ma_don_hang",
       cell: ({ getValue }) => getValue() || "Đang c.nhật",
     },
     {
-      header: "Chất liệu",
-      accessorKey: "chat_lieu",
+      header: "nhân viên sale",
+      accessorKey: "nhan_vien_sale",
       cell: ({ getValue }) => getValue() || "Khác",
       enableSorting: false,
     },
     {
-      header: "Hoàn thiện",
-      accessorKey: "hoan_thien",
+      header: "ghi chú",
+      accessorKey: "ghi_chu",
       cell: ({ getValue }) => getValue() || "Đang c.nhật",
     },
     {
-      header: () => <div className="pr-2 text-end">Giá</div>,
-      accessorKey: "gia",
-      cell: ({ row }) => {
-        const price =
-          customerProducts?.find((x) => x.id === row.original.id)?.gia ??
-          row.original.gia;
-
-        return (
-          <div className="text-end text-sm font-medium">
-            {price ? vndFormatter.format(price) : "Đang c.nhật"}
-            {row.original.don_vi ? "/" + row.original.don_vi : ""}
-          </div>
-        );
-      },
+      header: "Tổng tiền",
+      accessorKey: "tong_tien_khong_VAT",
+      cell: ({ getValue }) => getValue() || "Đang c.nhật",
     },
   ];
 
-  const table = useReactTable<Tables<"products">>({
+  const table = useReactTable<Tables<"don_hang">>({
     data,
     columns,
     getRowCanExpand: () => true,
@@ -152,7 +136,7 @@ export const PriceTable = ({
   return (
     <div className="mt-4 py-2">
       <div className=" border-b">
-        <div className="pl-2 text-base font-semibold">
+        {/* <div className="pl-2 text-base font-semibold">
           {!skeleton && (
             <>
               <div className="flex">
@@ -165,7 +149,7 @@ export const PriceTable = ({
               </div>
             </>
           )}
-        </div>
+        </div> */}
         <Table>
           <colgroup>
             <col width={130} />
@@ -265,7 +249,7 @@ export const PriceTable = ({
                       {row.getIsExpanded() && (
                         <TableRow className="bg-gray-100">
                           {/* 2nd row is a custom 1 cell row */}
-                          <TableCell
+                          {/* <TableCell
                             colSpan={row.getVisibleCells().length}
                             className="border-b border-l border-r px-2 text-[13px]"
                           >
@@ -274,7 +258,7 @@ export const PriceTable = ({
                               img,
                               customerProducts,
                             })}
-                          </TableCell>
+                          </TableCell> */}
                         </TableRow>
                       )}
                     </Fragment>
@@ -334,77 +318,74 @@ export const PriceTable = ({
   );
 };
 
-const renderSubComponent = ({
-  row,
-  img,
-  customerProducts,
-}: {
-  row: Row<Tables<"products">>;
-  img: string;
-  customerProducts: Tables<"customers_matview">["products"];
-}) => {
-  const record = row.original;
-  return (
-    <div className="items-center justify-between lg:flex">
-      <div>
-        <div className="flex">
-          <Image
-            loading="lazy"
-            src={img}
-            className="aspect-square shrink-0"
-            alt={img}
-            width={100}
-            height={100}
-          />
-          <div className="pl-2">
-            <div className="mb-2 text-[15px] font-semibold">
-              {record.ten_sp}
-            </div>
-            <div className="mb-1 flex text-[13px] font-normal">
-              <p className="w-24 font-normal text-gray-400">
-                Thương hiệu:&nbsp;
-              </p>
-              {record.thuong_hieu || "Đang c.nhật"}
-            </div>
-            <div className=" mb-1 flex text-[13px] font-normal">
-              <p className="w-24 font-normal text-gray-400">Quy cách:&nbsp;</p>
-              {record.quy_cach || "Đang c.nhật"}
-            </div>
-            <div className="mb-1 flex text-[13px] font-normal">
-              <p className="w-24 font-normal text-gray-400">Chất liệu:&nbsp;</p>
-              {record.chat_lieu || "Khác"}
-            </div>
-            <div className="flex text-[13px] font-normal">
-              <p className="w-24 font-normal text-gray-400">Giá:&nbsp;</p>
-              {/* {record.gia ? vndFormatter.format(record.gia) : "Đang c.nhật"} */}
-              {privatePrice(record, customerProducts)}
-            </div>
-          </div>
-        </div>
-      </div>
+// const renderSubComponent = ({
+//   row,
+//   img,
+//   // customerProducts,
+// }: {
+//   row: Row<Tables<"don_hang">>;
+//   img: string;
+//   customerProducts: Tables<"don_hang">;
+// }) => {
+//   const record = row.original;
+//   return (
+//     <div className="items-center justify-between lg:flex">
+//       <div>
+//         <div className="flex">
+//           <Image
+//             loading="lazy"
+//             src={img}
+//             className="aspect-square shrink-0"
+//             alt={img}
+//             width={100}
+//             height={100}
+//           />
+//           <div className="pl-2">
+//             <div className="mb-2 text-[15px] font-semibold">
+//               {record.ma_don_hang || "Đang c.nhật"}
+//             </div>
+//             <div className="mb-1 flex text-[13px] font-normal">
+//               <p className="w-24 font-normal text-gray-400">
+//                 Khách hàng:&nbsp;
+//               </p>
+//               {record.khach_hang || "Đang c.nhật"}
+//             </div>
+//             <div className=" mb-1 flex text-[13px] font-normal">
+//               <p className="w-24 font-normal text-gray-400">
+//                 nhân viên sale:&nbsp;
+//               </p>
+//               {record.nhan_vien_sane || "Đang c.nhật"}
+//             </div>
+//             <div className="mb-1 flex text-[13px] font-normal">
+//               <p className="w-24 font-normal text-gray-400">ghi chú:&nbsp;</p>
+//               {record.ghi_chu || "Khác"}
+//             </div>
+//           </div>
+//         </div>
+//       </div>
 
-      <div className="flex items-center gap-1 pt-4 lg:pt-0">
-        <span>Số lượng:</span>
-        <TextField placeholder="0" type="number" className="!w-20" />
-        <Button className="ml-auto bg-sky-800" size="sm">
-          Thêm vào giỏ hàng
-        </Button>
-      </div>
-    </div>
-  );
-};
+//       <div className="flex items-center gap-1 pt-4 lg:pt-0">
+//         <span>Số lượng:</span>
+//         <TextField placeholder="0" type="number" className="!w-20" />
+//         <Button className="ml-auto bg-sky-800" size="sm">
+//           Thêm vào giỏ hàng
+//         </Button>
+//       </div>
+//     </div>
+//   );
+// };
 
-const privatePrice = (
-  record: Tables<"products">,
-  customerProducts: Tables<"customers_matview">["products"],
-) => {
-  const price =
-    customerProducts?.find((x) => x.id === record.id)?.gia ?? record.gia;
+// const privatePrice = (
+//   record: Tables<"don_hang">,
+//   customerProducts: Tables<"don_hang">,
+// ) => {
+//   const price =
+//     customerProducts?.find((x) => x.id === record.id)?.gia ?? record.gia;
 
-  return (
-    <div className="text-end text-sm font-medium">
-      {price ? vndFormatter.format(price) : "Đang c.nhật"}
-      {record.don_vi ? "/" + record.don_vi : ""}
-    </div>
-  );
-};
+//   return (
+//     <div className="text-end text-sm font-medium">
+//       {price ? vndFormatter.format(price) : "Đang c.nhật"}
+//       {record.ma_don_hang ? "/" + record.ma_don_hang : ""}
+//     </div>
+//   );
+// };

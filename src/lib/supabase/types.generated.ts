@@ -4,398 +4,428 @@ export type Json =
   | boolean
   | null
   | { [key: string]: Json | undefined }
-  | Json[]
+  | Json[];
 
 export type Database = {
   public: {
     Tables: {
       _prisma_migrations: {
         Row: {
-          applied_steps_count: number
-          checksum: string
-          finished_at: string | null
-          id: string
-          logs: string | null
-          migration_name: string
-          rolled_back_at: string | null
-          started_at: string
-        }
+          applied_steps_count: number;
+          checksum: string;
+          finished_at: string | null;
+          id: string;
+          logs: string | null;
+          migration_name: string;
+          rolled_back_at: string | null;
+          started_at: string;
+        };
         Insert: {
-          applied_steps_count?: number
-          checksum: string
-          finished_at?: string | null
-          id: string
-          logs?: string | null
-          migration_name: string
-          rolled_back_at?: string | null
-          started_at?: string
-        }
+          applied_steps_count?: number;
+          checksum: string;
+          finished_at?: string | null;
+          id: string;
+          logs?: string | null;
+          migration_name: string;
+          rolled_back_at?: string | null;
+          started_at?: string;
+        };
         Update: {
-          applied_steps_count?: number
-          checksum?: string
-          finished_at?: string | null
-          id?: string
-          logs?: string | null
-          migration_name?: string
-          rolled_back_at?: string | null
-          started_at?: string
-        }
-        Relationships: []
-      }
+          applied_steps_count?: number;
+          checksum?: string;
+          finished_at?: string | null;
+          id?: string;
+          logs?: string | null;
+          migration_name?: string;
+          rolled_back_at?: string | null;
+          started_at?: string;
+        };
+        Relationships: [];
+      };
       customer_products: {
         Row: {
-          customer_id: string | null
-          don_vi: string | null
-          gia: number | null
-          hieu_luc_toi_ngay: string | null
-          id: number
-          last_synced: string
-          product_id: string
-        }
+          customer_id: string | null;
+          don_vi: string | null;
+          gia: number | null;
+          hieu_luc_toi_ngay: string | null;
+          id: number;
+          last_synced: string;
+          product_id: string;
+        };
         Insert: {
-          customer_id?: string | null
-          don_vi?: string | null
-          gia?: number | null
-          hieu_luc_toi_ngay?: string | null
-          id?: number
-          last_synced?: string
-          product_id: string
-        }
+          customer_id?: string | null;
+          don_vi?: string | null;
+          gia?: number | null;
+          hieu_luc_toi_ngay?: string | null;
+          id?: number;
+          last_synced?: string;
+          product_id: string;
+        };
         Update: {
-          customer_id?: string | null
-          don_vi?: string | null
-          gia?: number | null
-          hieu_luc_toi_ngay?: string | null
-          id?: number
-          last_synced?: string
-          product_id?: string
-        }
-        Relationships: []
-      }
+          customer_id?: string | null;
+          don_vi?: string | null;
+          gia?: number | null;
+          hieu_luc_toi_ngay?: string | null;
+          id?: number;
+          last_synced?: string;
+          product_id?: string;
+        };
+        Relationships: [];
+      };
       customers: {
         Row: {
-          id: string
-          last_synced: string | null
-          name: string | null
-          nganh_nghe: string | null
-          product_prices: Json | null
-          sdt: string | null
-        }
+          id: string;
+          last_synced: string | null;
+          name: string | null;
+          nganh_nghe: string | null;
+          product_prices: Json | null;
+          sdt: string | null;
+        };
         Insert: {
-          id: string
-          last_synced?: string | null
-          name?: string | null
-          nganh_nghe?: string | null
-          product_prices?: Json | null
-          sdt?: string | null
-        }
+          id: string;
+          last_synced?: string | null;
+          name?: string | null;
+          nganh_nghe?: string | null;
+          product_prices?: Json | null;
+          sdt?: string | null;
+        };
         Update: {
-          id?: string
-          last_synced?: string | null
-          name?: string | null
-          nganh_nghe?: string | null
-          product_prices?: Json | null
-          sdt?: string | null
-        }
-        Relationships: []
-      }
+          id?: string;
+          last_synced?: string | null;
+          name?: string | null;
+          nganh_nghe?: string | null;
+          product_prices?: Json | null;
+          sdt?: string | null;
+        };
+        Relationships: [];
+      };
       product_groups: {
         Row: {
-          icon: string | null
-          id: string
-          image_url: string | null
-          is_leaf: boolean | null
-          last_synced: string
-          level: number | null
-          name: string | null
-          nganh_nghe: string | null
-          parent_id: string | null
-          pos: number | null
-          slug: string | null
-        }
+          icon: string | null;
+          id: string;
+          image_url: string | null;
+          is_leaf: boolean | null;
+          last_synced: string;
+          level: number | null;
+          name: string | null;
+          nganh_nghe: string | null;
+          parent_id: string | null;
+          pos: number | null;
+          slug: string | null;
+        };
         Insert: {
-          icon?: string | null
-          id?: string
-          image_url?: string | null
-          is_leaf?: boolean | null
-          last_synced?: string
-          level?: number | null
-          name?: string | null
-          nganh_nghe?: string | null
-          parent_id?: string | null
-          pos?: number | null
-          slug?: string | null
-        }
+          icon?: string | null;
+          id?: string;
+          image_url?: string | null;
+          is_leaf?: boolean | null;
+          last_synced?: string;
+          level?: number | null;
+          name?: string | null;
+          nganh_nghe?: string | null;
+          parent_id?: string | null;
+          pos?: number | null;
+          slug?: string | null;
+        };
         Update: {
-          icon?: string | null
-          id?: string
-          image_url?: string | null
-          is_leaf?: boolean | null
-          last_synced?: string
-          level?: number | null
-          name?: string | null
-          nganh_nghe?: string | null
-          parent_id?: string | null
-          pos?: number | null
-          slug?: string | null
-        }
-        Relationships: []
-      }
+          icon?: string | null;
+          id?: string;
+          image_url?: string | null;
+          is_leaf?: boolean | null;
+          last_synced?: string;
+          level?: number | null;
+          name?: string | null;
+          nganh_nghe?: string | null;
+          parent_id?: string | null;
+          pos?: number | null;
+          slug?: string | null;
+        };
+        Relationships: [];
+      };
       products: {
         Row: {
-          chat_lieu: string | null
-          don_vi: string | null
-          gia: number | null
-          hoan_thien: string | null
-          id: string
-          last_synced: string
-          product_group_id: string | null
-          product_group_slug: string | null
-          quy_cach: string | null
-          ten_sp: string | null
-          thuong_hieu: string | null
-        }
+          chat_lieu: string | null;
+          don_vi: string | null;
+          gia: number | null;
+          hoan_thien: string | null;
+          id: string;
+          last_synced: string;
+          product_group_id: string | null;
+          product_group_slug: string | null;
+          quy_cach: string | null;
+          ten_sp: string | null;
+          thuong_hieu: string | null;
+        };
         Insert: {
-          chat_lieu?: string | null
-          don_vi?: string | null
-          gia?: number | null
-          hoan_thien?: string | null
-          id?: string
-          last_synced?: string
-          product_group_id?: string | null
-          product_group_slug?: string | null
-          quy_cach?: string | null
-          ten_sp?: string | null
-          thuong_hieu?: string | null
-        }
+          chat_lieu?: string | null;
+          don_vi?: string | null;
+          gia?: number | null;
+          hoan_thien?: string | null;
+          id?: string;
+          last_synced?: string;
+          product_group_id?: string | null;
+          product_group_slug?: string | null;
+          quy_cach?: string | null;
+          ten_sp?: string | null;
+          thuong_hieu?: string | null;
+        };
         Update: {
-          chat_lieu?: string | null
-          don_vi?: string | null
-          gia?: number | null
-          hoan_thien?: string | null
-          id?: string
-          last_synced?: string
-          product_group_id?: string | null
-          product_group_slug?: string | null
-          quy_cach?: string | null
-          ten_sp?: string | null
-          thuong_hieu?: string | null
-        }
-        Relationships: []
-      }
+          chat_lieu?: string | null;
+          don_vi?: string | null;
+          gia?: number | null;
+          hoan_thien?: string | null;
+          id?: string;
+          last_synced?: string;
+          product_group_id?: string | null;
+          product_group_slug?: string | null;
+          quy_cach?: string | null;
+          ten_sp?: string | null;
+          thuong_hieu?: string | null;
+        };
+        Relationships: [];
+      };
       test: {
         Row: {
-          created_at: string
-          id: number
-          name: string | null
-        }
+          created_at: string;
+          id: number;
+          name: string | null;
+        };
         Insert: {
-          created_at?: string
-          id?: number
-          name?: string | null
-        }
+          created_at?: string;
+          id?: number;
+          name?: string | null;
+        };
         Update: {
-          created_at?: string
-          id?: number
-          name?: string | null
-        }
-        Relationships: []
-      }
+          created_at?: string;
+          id?: number;
+          name?: string | null;
+        };
+        Relationships: [];
+      };
       users: {
         Row: {
-          createdAt: string
-          currentHashedRefreshToken: string | null
-          email: string
-          id: number
-          isGuest: boolean
-          name: string | null
-          updatedAt: string
-        }
+          createdAt: string;
+          currentHashedRefreshToken: string | null;
+          email: string;
+          id: number;
+          isGuest: boolean;
+          name: string | null;
+          updatedAt: string;
+        };
         Insert: {
-          createdAt?: string
-          currentHashedRefreshToken?: string | null
-          email: string
-          id?: number
-          isGuest?: boolean
-          name?: string | null
-          updatedAt: string
-        }
+          createdAt?: string;
+          currentHashedRefreshToken?: string | null;
+          email: string;
+          id?: number;
+          isGuest?: boolean;
+          name?: string | null;
+          updatedAt: string;
+        };
         Update: {
-          createdAt?: string
-          currentHashedRefreshToken?: string | null
-          email?: string
-          id?: number
-          isGuest?: boolean
-          name?: string | null
-          updatedAt?: string
-        }
-        Relationships: []
-      }
-    }
+          createdAt?: string;
+          currentHashedRefreshToken?: string | null;
+          email?: string;
+          id?: number;
+          isGuest?: boolean;
+          name?: string | null;
+          updatedAt?: string;
+        };
+        Relationships: [];
+      };
+    };
     Views: {
       customers_matview: {
         Row: {
-          id: string | null
-          last_synced: string | null
-          name: string | null
-          nganh_nghe: string | null
-          products: Json | null
-          sdt: string | null
-        }
-        Relationships: []
-      }
+          id: string | null;
+          last_synced: string | null;
+          name: string | null;
+          nganh_nghe: string | null;
+          products: Json | null;
+          sdt: string | null;
+        };
+        Relationships: [];
+      };
       menu_nodes_matview: {
         Row: {
-          child_nodes: Json | null
-          id: string | null
-          image_url: string | null
-          name: string | null
-          pos: number | null
-          slug: string | null
-        }
-        Relationships: []
-      }
+          child_nodes: Json | null;
+          id: string | null;
+          image_url: string | null;
+          name: string | null;
+          pos: number | null;
+          slug: string | null;
+        };
+        Relationships: [];
+      };
       product_groups_with_children: {
         Row: {
-          children: Json[] | null
-          id: string | null
-          image_url: string | null
-          json_products: Json[] | null
-          name: string | null
-          nganh_nghe: string | null
-          parent_id: string | null
-        }
+          children: Json[] | null;
+          id: string | null;
+          image_url: string | null;
+          json_products: Json[] | null;
+          name: string | null;
+          nganh_nghe: string | null;
+          parent_id: string | null;
+        };
         Insert: {
-          children?: never
-          id?: string | null
-          image_url?: string | null
-          json_products?: never
-          name?: string | null
-          nganh_nghe?: string | null
-          parent_id?: string | null
-        }
+          children?: never;
+          id?: string | null;
+          image_url?: string | null;
+          json_products?: never;
+          name?: string | null;
+          nganh_nghe?: string | null;
+          parent_id?: string | null;
+        };
         Update: {
-          children?: never
-          id?: string | null
-          image_url?: string | null
-          json_products?: never
-          name?: string | null
-          nganh_nghe?: string | null
-          parent_id?: string | null
-        }
-        Relationships: []
-      }
+          children?: never;
+          id?: string | null;
+          image_url?: string | null;
+          json_products?: never;
+          name?: string | null;
+          nganh_nghe?: string | null;
+          parent_id?: string | null;
+        };
+        Relationships: [];
+      };
       product_groups_with_products: {
         Row: {
-          id: string | null
-          image_url: string | null
-          json_products: Json[] | null
-          name: string | null
-          nganh_nghe: string | null
-          parent_id: string | null
-        }
+          id: string | null;
+          image_url: string | null;
+          json_products: Json[] | null;
+          name: string | null;
+          nganh_nghe: string | null;
+          parent_id: string | null;
+        };
         Insert: {
-          id?: string | null
-          image_url?: string | null
-          json_products?: never
-          name?: string | null
-          nganh_nghe?: string | null
-          parent_id?: string | null
-        }
+          id?: string | null;
+          image_url?: string | null;
+          json_products?: never;
+          name?: string | null;
+          nganh_nghe?: string | null;
+          parent_id?: string | null;
+        };
         Update: {
-          id?: string | null
-          image_url?: string | null
-          json_products?: never
-          name?: string | null
-          nganh_nghe?: string | null
-          parent_id?: string | null
-        }
-        Relationships: []
-      }
-    }
+          id?: string | null;
+          image_url?: string | null;
+          json_products?: never;
+          name?: string | null;
+          nganh_nghe?: string | null;
+          parent_id?: string | null;
+        };
+        Relationships: [];
+      };
+      don_hang: {
+        Row: {
+          id: string;
+          ma_don_hang: string | null;
+          khach_hang: string | null;
+          nhan_vien_sane: string | null;
+          ghi_chu: string | null;
+          tong_tien_khong_VAT: number | null;
+          ngay_tao_don_hang: Date | null;
+        };
+        Insert: {
+          id: string;
+          ma_don_hang: string | null;
+          khach_hang: string | null;
+          nhan_vien_sane: string | null;
+          ghi_chu: string | null;
+          tong_tien_khong_VAT: number | null;
+          ngay_tao_don_hang: Date | null;
+        };
+        Update: {
+          id: string;
+          ma_don_hang: string | null;
+          khach_hang: string | null;
+          nhan_vien_sane: string | null;
+          ghi_chu: string | null;
+          tong_tien_khong_VAT: number | null;
+          ngay_tao_don_hang: Date | null;
+        };
+      };
+      Relationships: [];
+    };
     Functions: {
       build_parent_slug: {
         Args: {
-          product_id: string
-        }
-        Returns: string
-      }
+          product_id: string;
+        };
+        Returns: string;
+      };
       generate_unique_slug:
         | {
             Args: {
-              name: string
-              id: string
-            }
-            Returns: string
+              name: string;
+              id: string;
+            };
+            Returns: string;
           }
         | {
             Args: {
-              name: string
-              record_id: string
-            }
-            Returns: string
-          }
+              name: string;
+              record_id: string;
+            };
+            Returns: string;
+          };
       get_child_nodes: {
         Args: {
-          p_parent_id: string
-          p_parent_slug: string
-        }
-        Returns: Json
-      }
+          p_parent_id: string;
+          p_parent_slug: string;
+        };
+        Returns: Json;
+      };
       unaccent: {
         Args: {
-          "": string
-        }
-        Returns: string
-      }
+          "": string;
+        };
+        Returns: string;
+      };
       unaccent_init: {
         Args: {
-          "": unknown
-        }
-        Returns: unknown
-      }
-    }
+          "": unknown;
+        };
+        Returns: unknown;
+      };
+    };
     Enums: {
-      [_ in never]: never
-    }
+      [_ in never]: never;
+    };
     CompositeTypes: {
       menu_item: {
-        id: number | null
-        name: string | null
-        icon: string | null
-      }
+        id: number | null;
+        name: string | null;
+        icon: string | null;
+      };
       menu_level2: {
-        id: number | null
-        name: string | null
-        icon: string | null
-        children: Database["public"]["CompositeTypes"]["menu_level3"][] | null
-      }
+        id: number | null;
+        name: string | null;
+        icon: string | null;
+        children: Database["public"]["CompositeTypes"]["menu_level3"][] | null;
+      };
       menu_level3: {
-        id: number | null
-        name: string | null
-        icon: string | null
-        children: Database["public"]["CompositeTypes"]["menu_level4"][] | null
-      }
+        id: number | null;
+        name: string | null;
+        icon: string | null;
+        children: Database["public"]["CompositeTypes"]["menu_level4"][] | null;
+      };
       menu_level4: {
-        id: number | null
-        name: string | null
-        icon: string | null
-      }
+        id: number | null;
+        name: string | null;
+        icon: string | null;
+      };
       node_info: {
-        id: string | null
-        name: string | null
-        slug: string | null
-        image_url: string | null
-        pos: number | null
-        parent_id: string | null
-        parent_name: string | null
-        parent_slug: string | null
-      }
-    }
-  }
-}
+        id: string | null;
+        name: string | null;
+        slug: string | null;
+        image_url: string | null;
+        pos: number | null;
+        parent_id: string | null;
+        parent_name: string | null;
+        parent_slug: string | null;
+      };
+    };
+  };
+};
 
-type PublicSchema = Database[Extract<keyof Database, "public">]
+type PublicSchema = Database[Extract<keyof Database, "public">];
 
 export type Tables<
   PublicTableNameOrOptions extends
@@ -408,7 +438,7 @@ export type Tables<
 > = PublicTableNameOrOptions extends { schema: keyof Database }
   ? (Database[PublicTableNameOrOptions["schema"]]["Tables"] &
       Database[PublicTableNameOrOptions["schema"]]["Views"])[TableName] extends {
-      Row: infer R
+      Row: infer R;
     }
     ? R
     : never
@@ -416,11 +446,11 @@ export type Tables<
         PublicSchema["Views"])
     ? (PublicSchema["Tables"] &
         PublicSchema["Views"])[PublicTableNameOrOptions] extends {
-        Row: infer R
+        Row: infer R;
       }
       ? R
       : never
-    : never
+    : never;
 
 export type TablesInsert<
   PublicTableNameOrOptions extends
@@ -431,17 +461,17 @@ export type TablesInsert<
     : never = never,
 > = PublicTableNameOrOptions extends { schema: keyof Database }
   ? Database[PublicTableNameOrOptions["schema"]]["Tables"][TableName] extends {
-      Insert: infer I
+      Insert: infer I;
     }
     ? I
     : never
   : PublicTableNameOrOptions extends keyof PublicSchema["Tables"]
     ? PublicSchema["Tables"][PublicTableNameOrOptions] extends {
-        Insert: infer I
+        Insert: infer I;
       }
       ? I
       : never
-    : never
+    : never;
 
 export type TablesUpdate<
   PublicTableNameOrOptions extends
@@ -452,22 +482,22 @@ export type TablesUpdate<
     : never = never,
 > = PublicTableNameOrOptions extends { schema: keyof Database }
   ? Database[PublicTableNameOrOptions["schema"]]["Tables"][TableName] extends {
-      Update: infer U
+      Update: infer U;
     }
     ? U
     : never
   : PublicTableNameOrOptions extends keyof PublicSchema["Tables"]
     ? PublicSchema["Tables"][PublicTableNameOrOptions] extends {
-        Update: infer U
+        Update: infer U;
       }
       ? U
       : never
-    : never
+    : never;
 
 export type Enums<
   PublicEnumNameOrOptions extends
-    | keyof PublicSchema["Enums"]
-    | { schema: keyof Database },
+    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+    keyof PublicSchema["Enums"] | { schema: keyof Database },
   EnumName extends PublicEnumNameOrOptions extends { schema: keyof Database }
     ? keyof Database[PublicEnumNameOrOptions["schema"]]["Enums"]
     : never = never,
@@ -475,4 +505,4 @@ export type Enums<
   ? Database[PublicEnumNameOrOptions["schema"]]["Enums"][EnumName]
   : PublicEnumNameOrOptions extends keyof PublicSchema["Enums"]
     ? PublicSchema["Enums"][PublicEnumNameOrOptions]
-    : never
+    : never;

@@ -1,21 +1,21 @@
-import type {ReactNode} from "react";
-import {headers} from "next/headers";
+import type { ReactNode } from "react";
+import { headers } from "next/headers";
 import Container from "@component/Container";
+import Footer from "@component/footer_component";
 import Grid from "@component/grid/Grid";
+import { Header } from "@component/header_component";
+import { MobileNavigationBar } from "@component/mobile-navigation";
 import Sticky from "@component/sticky";
+import { getAllProductGroups, getCustomer, getMenuNodes } from "@utils/server";
 
-import Footer from "./_components/footer";
-import {Header} from "./_components/header";
-import {MobileNavigationBar} from "./_components/mobile-navigation";
-import {getAllProductGroups, getCustomer, getMenuNodes,} from "./_utils/server";
-import {StyledAppLayout} from "./styles";
+import { StyledAppLayout } from "./styles";
 
 export default async function Layout(props: { children: ReactNode }) {
   const { children } = props;
   const customerId = new URLSearchParams(
     headers().get("x-url")?.split("?").at(-1),
   ).get("customer");
-  const [allProductGroups, menuNodes, customer] = await Promise.all([
+  const [allcustomer, menuNodes, customer] = await Promise.all([
     getAllProductGroups(),
     getMenuNodes(),
     customerId ? getCustomer(customerId) : undefined,
@@ -25,7 +25,7 @@ export default async function Layout(props: { children: ReactNode }) {
     <StyledAppLayout>
       <Sticky fixedOn={0} scrollDistance={300}>
         <Header
-          allProductGroups={allProductGroups}
+          allProductGroups={allcustomer}
           menuNodes={menuNodes}
           customer={customer}
         />

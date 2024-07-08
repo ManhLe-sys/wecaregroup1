@@ -47,6 +47,19 @@ export type Database = MergeDeep<
             }[];
           };
         };
+        don_hang: {
+          Row: {
+            child_don_hang: {
+              id: string;
+              ma_don_hang: string | null;
+              khach_hang: string | null;
+              nhan_vien_sane: string | null;
+              ghi_chu: string | null;
+              tong_tien_khong_VAT: number | null;
+              ngay_tao_don_hang: Date | null;
+            }
+          };
+        };
       };
     };
   }
@@ -123,8 +136,8 @@ export type TablesUpdate<
 
 export type Enums<
   PublicEnumNameOrOptions extends
-    | keyof PublicSchema["Enums"]
-    | { schema: keyof Database },
+    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+    keyof PublicSchema["Enums"] | { schema: keyof Database },
   EnumName extends PublicEnumNameOrOptions extends { schema: keyof Database }
     ? keyof Database[PublicEnumNameOrOptions["schema"]]["Enums"]
     : never = never,

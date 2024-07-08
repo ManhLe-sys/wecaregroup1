@@ -1,13 +1,12 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
+// import { usePathname, useSearchParams } from "next/navigation";
 import Box from "@component/Box";
 import Container from "@component/Container";
 import FlexBox from "@component/FlexBox";
 import Icon from "@component/icon/Icon";
+import { MobileSidebar } from "@component/mobile_sidebar/";
 import { SearchInputWithCategory } from "@component/search-box";
-import { Tiny } from "@component/Typography";
-import { useAppContext } from "@context/app-context";
 import Login from "@sections/auth/Login";
 
 import type { Tables } from "~/lib/supabase/types";
@@ -16,7 +15,6 @@ import { Image } from "~/components/image";
 import { Link } from "~/components/link";
 import { Button } from "~/components/shadcn/button";
 import { cn } from "~/utils";
-import { MobileSidebar } from "../mobile-sidebar";
 import UserLoginDialog from "./LoginDialog";
 import StyledHeader from "./styles";
 
@@ -33,15 +31,34 @@ export default function Header({
   menuNodes,
   customer,
 }: HeaderProps) {
-  const searchParams = useSearchParams();
-  const customerId = searchParams.get("customer");
-  const pathSplited = usePathname().split("/");
+  // const { state } = useAppContext();
+  // const searchParams = useSearchParams();
+  // const customerId = searchParams.get("customer");
+  // const pathSplited = usePathname().split("/");
 
   const CART_HANDLE = (
     <Box ml="20px" position="relative">
       <IconButton bg="gray.200" p="12px">
         <Icon size="20px">bag</Icon>
       </IconButton>
+
+      {/* {!!state.cart.length && (
+        <FlexBox
+          top={-5}
+          right={-5}
+          height={20}
+          minWidth={20}
+          bg="primary.main"
+          borderRadius="50%"
+          alignItems="center"
+          position="absolute"
+          justifyContent="center"
+        >
+          <Tiny color="white" fontWeight="600" lineHeight={1}>
+            {state.cart.length}
+          </Tiny>
+        </FlexBox>
+      )} */}
     </Box>
   );
 
@@ -77,7 +94,7 @@ export default function Header({
             alignItems="center"
             mr="1rem"
           >
-            <Link href="/khach-hang" className="flex items-center">
+            <Link href="/danh-muc-san-pham" className="flex items-center">
               <Image
                 src="/assets/images/logo.svg"
                 alt="logo"
@@ -138,19 +155,10 @@ export default function Header({
           TRANG CHỦ
         </Link>
         <Link
-          href={
-            pathSplited.slice(0, 2).join("/") +
-            (customerId ? `?customer=${customerId}` : "")
-          }
-          className="pl-11 text-base font-medium text-sky-700 hover:text-blue-500"
-        >
-          SẢN PHẨM
-        </Link>
-        <Link
           href={"/danh-muc-san-pham"}
           className="pl-11 text-base font-medium text-sky-700 hover:text-blue-500"
         >
-          DANH MỤC SẢN PHẨM
+          SẢN PHẨM
         </Link>
         <Link
           href={""}
@@ -163,6 +171,12 @@ export default function Header({
           className="pl-11 text-base font-medium text-sky-700 hover:text-blue-500"
         >
           TIN TỨC
+        </Link>
+        <Link
+          href={"/don-hang"}
+          className="pl-11 text-base font-medium text-sky-700 hover:text-blue-500"
+        >
+          ĐƠN HÀNG
         </Link>
       </Container>
     </StyledHeader>

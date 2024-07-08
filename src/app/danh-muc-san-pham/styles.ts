@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { getTheme } from "@utils/utils";
 import styled from "styled-components";

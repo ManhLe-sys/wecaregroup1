@@ -4,12 +4,12 @@ import React from "react";
 import { useSearchParams } from "next/navigation";
 import MegaMenu1 from "@component/categories/mega-menu/MegaMenu1";
 import MegaMenu2 from "@component/categories/mega-menu/MegaMenu2";
+import { DANH_MUC_SAN_PHAM_URL } from "@component/config";
 
 import type { Tables } from "~/lib/supabase/types";
 import Icon from "~/components/icon/Icon";
 import { Link } from "~/components/link";
 import Typography from "~/components/Typography";
-import { DANH_MUC_SAN_PHAM_URL } from "../../config";
 import { StyledCategoryDropdown } from "./components";
 import RootItem from "./RootItem";
 import { getCollections } from "./utils";

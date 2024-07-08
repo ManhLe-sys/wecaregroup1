@@ -159,23 +159,6 @@ export const MobileNav = ({
                   </Accordion>
                 </Fragment>
               ))}
-
-              {/* {level_2_without_children.length > 0 && ( */}
-              {/*   <Box mb="2rem" mt="0.5rem"> */}
-              {/*     <Typography fontWeight="600" fontSize="15px" mb="1rem"> */}
-              {/*       Danh mục khác */}
-              {/*     </Typography> */}
-              {/*     <Grid container spacing={3}> */}
-              {/*       {level_2_without_children.map((item, ind) => ( */}
-              {/*         <Grid item lg={1} md={2} sm={4} xs={4} key={ind}> */}
-              {/*           <Link href={item.href}> */}
-              {/*             <MobileCategoryImageBox {...item} /> */}
-              {/*           </Link> */}
-              {/*         </Grid> */}
-              {/*       ))} */}
-              {/*     </Grid> */}
-              {/*   </Box> */}
-              {/* )} */}
             </>
           ) : (
             <Box mb="2rem">

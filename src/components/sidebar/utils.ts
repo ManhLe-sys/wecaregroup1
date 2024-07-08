@@ -1,8 +1,7 @@
 import type { MenuItem } from "@component/categories/mega-menu/type";
 import type { Tables } from "@lib/supabase/types";
-
-import { filterLeafNodes } from "../../_utils/client";
-import { DANH_MUC_SAN_PHAM_URL } from "../../config";
+import { DANH_MUC_SAN_PHAM_URL } from "@component/config";
+import { filterLeafNodes } from "@utils/client";
 
 const checkNodeHasProductId = (
   node: Tables<"product_groups">,

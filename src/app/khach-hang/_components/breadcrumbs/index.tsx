@@ -10,12 +10,12 @@ import type { Tables } from "~/lib/supabase/types";
 export function Breadcrumb({
   allProductGroups,
 }: {
-  allProductGroups: Tables<"product_groups">[];
+  allProductGroups: Tables<"don_hang">[];
 }) {
   const params = useParams<DefaultProductListContentProps["params"]>();
   const pathSplited = usePathname().split("/");
   const searchParams = useSearchParams();
-  const customerId = searchParams.get("customer");
+  const customerId = searchParams.get("don_hang");
 
   return (
     <div className=" items-center gap-1 py-1.5 text-sm font-semibold leading-5 text-sky-800 bg-blend-normal max-lg:flex-wrap">
@@ -26,7 +26,7 @@ export function Breadcrumb({
           (customerId ? `?customer=${customerId}` : "")
         }
       >
-        Danh mục sản phẩm
+        ĐƠN HÀNG
       </Link>
       {params.slug?.map((s, index) => {
         const d = allProductGroups.find((resGroups) => resGroups.slug === s);

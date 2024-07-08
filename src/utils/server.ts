@@ -4,8 +4,11 @@ import { cache } from "react";
 
 import { createClient } from "~/lib/supabase/server";
 
+// Đảm bảo cache được import đúng cách
+
 export const getAllProductGroups = cache(async () => {
   const supabase = createClient();
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return (
     (
       await supabase
@@ -35,6 +38,7 @@ export const getAllProductGroups = cache(async () => {
 
 export const getMenuNodes = cache(async () => {
   const supabase = createClient();
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return (
     (
       await supabase
@@ -57,6 +61,7 @@ export const getMenuNodes = cache(async () => {
 // });
 export const getCustomer = cache(async (customerId: string) => {
   const supabase = createClient();
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return (
     await supabase.from("customers_matview").select().eq("id", customerId)
   ).data?.[0];
@@ -68,5 +73,14 @@ export const productsBySlug = (slug: string) => {
     .from("products")
     .select("*")
     .eq("product_group_slug", slug)
+    .order("id", { ascending: true });
+};
+
+export const donHangBySlug = (slug: string) => {
+  const supabase = createClient();
+  return supabase
+    .from("don_hang")
+    .select("*")
+    .eq("ma_don_hang", slug)
     .order("id", { ascending: true });
 };

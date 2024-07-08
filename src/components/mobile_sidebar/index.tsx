@@ -65,7 +65,7 @@ export const MobileSidebar = ({
                 <span className="sr-only">Close</span>
               </Button>
             </SheetClose>
-            <Link href="/khach-hang">
+            <Link href="/don-hang">
               <div className="flex">
                 <Image
                   src="/assets/images/logo.svg"

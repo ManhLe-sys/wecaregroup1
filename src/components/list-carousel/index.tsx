@@ -1,13 +1,9 @@
 import { Fragment } from "react";
+import { getCollections } from "@component/sidebar/utils";
+import { getChildNodes } from "@utils/client";
+import { getAllProductGroups, getCustomer, getMenuNodes } from "@utils/server";
 
 import type { DefaultProductListContentProps } from "../content";
-import { getChildNodes } from "../../_utils/client";
-import {
-  getAllProductGroups,
-  getCustomer,
-  getMenuNodes,
-} from "../../_utils/server";
-import { getCollections } from "../sidebar/utils";
 import { Item } from "./Item";
 
 export const ListCarousel = async ({
