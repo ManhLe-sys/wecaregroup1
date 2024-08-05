@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { useParams, usePathname } from "next/navigation";
+import { DANH_MUC_SAN_PHAM_URL } from "@component/config";
+import { LeafCarousel } from "@component/leaf-carousel";
+import { getChildNodes } from "@utils/client";
 
 import { Breadcrumb } from "~/app/danh-muc-san-pham/_components/breadcrumbs";
 import {
@@ -13,10 +16,7 @@ import {
   SelectValue,
 } from "~/components/ui/select";
 import { Tables } from "~/lib/supabase/types";
-import { getChildNodes } from "../../_utils/client";
-import { DANH_MUC_SAN_PHAM_URL } from "../../config";
 import { DefaultProductListContentProps } from "../content";
-import { LeafCarousel } from "../leaf-carousel";
 
 export const Topbar = ({
   allProductGroups,
@@ -47,7 +47,7 @@ export const Topbar = ({
         </div>
         <div className="flex items-center justify-center lg:justify-between ">
           <Breadcrumb allProductGroups={allProductGroups} />
-          <div className="row hidden items-center lg:flex">
+          {/* <div className="row hidden items-center lg:flex">
             <p className="pr-2">Ngành nghề:</p>
             <Select defaultValue={sortOptions[0]?.value}>
               <SelectTrigger className="w-[180px]">
@@ -63,7 +63,7 @@ export const Topbar = ({
                 </SelectGroup>
               </SelectContent>
             </Select>
-          </div>
+          </div> */}
         </div>
       </div>
       {(pathname !== "/" + DANH_MUC_SAN_PHAM_URL || customer) && (

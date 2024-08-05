@@ -32,6 +32,7 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_SUPABASE_URL: z.string().url(),
     NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().min(1),
+
     // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
   },
 
@@ -51,7 +52,6 @@ export const env = createEnv({
     NEXT_PUBLIC_SUPABASE_URL: "https://awustmvkxviqvsumbcyk.supabase.co",
     NEXT_PUBLIC_SUPABASE_ANON_KEY:
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3dXN0bXZreHZpcXZzdW1iY3lrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTc4MTY0MjksImV4cCI6MjAzMzM5MjQyOX0.hxlyeMkgBWYqDTmYtrXUr1M_S9SDvz5ouSyW8S4ctLo",
-    NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   skipValidation:
     !!process.env.CI ||

@@ -141,7 +141,7 @@ export default function Header({
           <span className="text-lg font-semibold">{customer?.name}</span>
         </div>
       </Container>
-      <Container
+      {/* <Container
         display="flex"
         alignItems="center"
         justifyContent="space-start"
@@ -178,7 +178,7 @@ export default function Header({
         >
           ĐƠN HÀNG
         </Link>
-      </Container>
+      </Container> */}
     </StyledHeader>
   );
 }

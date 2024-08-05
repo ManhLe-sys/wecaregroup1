@@ -13,8 +13,8 @@ import {
   SelectValue,
 } from "~/components/ui/select";
 import { Tables } from "~/lib/supabase/types";
-import { getChildNodes } from "../../_utils/client";
-import { DANH_MUC_SAN_PHAM_URL } from "../../config";
+import { getChildNodes } from "../../utils/client";
+// import { DANH_MUC_SAN_PHAM_URL } from "../../config";
 import { DefaultProductListContentProps } from "../content";
 import { LeafCarousel } from "../leaf-carousel";
 
@@ -66,9 +66,9 @@ export const Topbar = ({
           </div>
         </div>
       </div>
-      {(pathname !== "/" + DANH_MUC_SAN_PHAM_URL || customer) && (
+      {/* {(pathname !== "/" + DANH_MUC_SAN_PHAM_URL || customer) && (
         <LeafCarousel data={childNodes} leafCount={leafCount} />
-      )}
+      )} */}
     </>
   );
 };
@@ -82,3 +82,4 @@ const sortOptions = [
   { label: "Wicker", value: "Wicker" },
   { label: "Xây dựng", value: "Xây dựng" },
 ];
+export default Topbar;

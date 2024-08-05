@@ -1,3 +1,6 @@
+import { DANH_MUC_SAN_PHAM_URL } from "@component/config";
+import { getChildNodes } from "@utils/client";
+import { getCustomer, getMenuNodes, productsBySlug } from "@utils/server";
 import { ScanText } from "lucide-react";
 
 import type { Tables } from "~/lib/supabase/types";
@@ -5,9 +8,6 @@ import { Image } from "~/components/image";
 import { Link } from "~/components/link";
 import { Pagination } from "~/components/ui/pagination";
 import { vndFormatter } from "~/utils/vndFormatter";
-import { getChildNodes } from "../../_utils/client";
-import { getCustomer, getMenuNodes, productsBySlug } from "../../_utils/server";
-import { DANH_MUC_SAN_PHAM_URL } from "../../config";
 import { CloseLeafButton } from "./CloseLeafButton";
 import { PriceTable } from "./PriceTable";
 
